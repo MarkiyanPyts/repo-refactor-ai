@@ -14,7 +14,7 @@ import { LogoCloud } from '../components/LogoCloud';
 import { LogoCluster } from '../components/LogoCluster';
 import { LogoTimeline } from '../components/LogoTimeline';
 import { Map } from '../components/Map';
-// Note: Screenshot and Testimonials components need to be created
+import { Testimonials } from '../components/Testimonials';
 
 function HeroSection() {
   return (
@@ -290,6 +290,7 @@ export default function Home() {
         </div>
         <DarkBentoSection />
       </main>
+      <Testimonials />
       <Footer />
     </div>
   );
