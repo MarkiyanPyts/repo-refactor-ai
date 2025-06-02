@@ -24,6 +24,20 @@ const tiers = [
       { description: 'RadiantAI integrations', disabled: true },
       { description: 'Competitor analysis', disabled: true },
     ],
+    features: [
+      { section: 'Features', name: 'Accounts', value: 3 },
+      { section: 'Features', name: 'Deal progress boards', value: 5 },
+      { section: 'Features', name: 'Sourcing platforms', value: 'Select' },
+      { section: 'Features', name: 'Contacts', value: 100 },
+      { section: 'Features', name: 'AI assisted outreach', value: false },
+      { section: 'Analysis', name: 'Competitor analysis', value: false },
+      { section: 'Analysis', name: 'Dashboard reporting', value: false },
+      { section: 'Analysis', name: 'Community insights', value: false },
+      { section: 'Analysis', name: 'Performance analysis', value: false },
+      { section: 'Support', name: 'Email support', value: true },
+      { section: 'Support', name: '24 / 7 call center support', value: false },
+      { section: 'Support', name: 'Dedicated account manager', value: false },
+    ],
   },
   {
     name: 'Growth',
@@ -38,6 +52,20 @@ const tiers = [
       { description: 'RadiantAI integrations' },
       { description: '5 competitor analyses per month' },
     ],
+    features: [
+      { section: 'Features', name: 'Accounts', value: 10 },
+      { section: 'Features', name: 'Deal progress boards', value: 'Unlimited' },
+      { section: 'Features', name: 'Sourcing platforms', value: '100+' },
+      { section: 'Features', name: 'Contacts', value: 1000 },
+      { section: 'Features', name: 'AI assisted outreach', value: true },
+      { section: 'Analysis', name: 'Competitor analysis', value: '5 / month' },
+      { section: 'Analysis', name: 'Dashboard reporting', value: true },
+      { section: 'Analysis', name: 'Community insights', value: true },
+      { section: 'Analysis', name: 'Performance analysis', value: true },
+      { section: 'Support', name: 'Email support', value: true },
+      { section: 'Support', name: '24 / 7 call center support', value: true },
+      { section: 'Support', name: 'Dedicated account manager', value: false },
+    ],
   },
   {
     name: 'Enterprise',
@@ -51,6 +79,20 @@ const tiers = [
       { description: 'Source leads from over 100 verified platforms' },
       { description: 'RadiantAI integrations' },
       { description: 'Unlimited competitor analyses' },
+    ],
+    features: [
+      { section: 'Features', name: 'Accounts', value: 'Unlimited' },
+      { section: 'Features', name: 'Deal progress boards', value: 'Unlimited' },
+      { section: 'Features', name: 'Sourcing platforms', value: '100+' },
+      { section: 'Features', name: 'Contacts', value: 'Unlimited' },
+      { section: 'Features', name: 'AI assisted outreach', value: true },
+      { section: 'Analysis', name: 'Competitor analysis', value: 'Unlimited' },
+      { section: 'Analysis', name: 'Dashboard reporting', value: true },
+      { section: 'Analysis', name: 'Community insights', value: true },
+      { section: 'Analysis', name: 'Performance analysis', value: true },
+      { section: 'Support', name: 'Email support', value: true },
+      { section: 'Support', name: '24 / 7 call center support', value: true },
+      { section: 'Support', name: 'Dedicated account manager', value: true },
     ],
   },
 ];
@@ -141,6 +183,132 @@ function PlusIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
     <svg viewBox="0 0 15 15" aria-hidden="true" {...props}>
       <path clipRule="evenodd" d="M8 0H7v7H0v1h7v7h1V8h7V7H8V0z" />
     </svg>
+  );
+}
+
+function CheckIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" {...props}>
+      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function MinusIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+    </svg>
+  );
+}
+
+function PricingTable() {
+  const selectedTier = tiers[0]; // Default to first tier for simplicity
+
+  return (
+    <Container className={`${styles.py24} ${pricingStyles.tableMarginTop}`}>
+      <table className={pricingStyles.table}>
+        <caption className={pricingStyles.srOnly}>Pricing plan comparison</caption>
+        <colgroup>
+          <col className={pricingStyles.colTwoFifths} />
+          <col className={pricingStyles.colOneFifth} />
+          <col className={pricingStyles.colOneFifth} />
+          <col className={pricingStyles.colOneFifth} />
+        </colgroup>
+        <thead>
+          <tr className={pricingStyles.maxSmHidden}>
+            <td className={pricingStyles.p0} />
+            {tiers.map((tier) => (
+              <th
+                key={tier.slug}
+                scope="col"
+                className={pricingStyles.p0}
+              >
+                <Subheading as="div">{tier.name}</Subheading>
+              </th>
+            ))}
+          </tr>
+          <tr className={pricingStyles.maxSmHidden}>
+            <th className={pricingStyles.p0} scope="row">
+              <span className={pricingStyles.srOnly}>Get started</span>
+            </th>
+            {tiers.map((tier) => (
+              <td
+                key={tier.slug}
+                className={`${pricingStyles.px0} ${pricingStyles.pt4} ${pricingStyles.pb0}`}
+              >
+                <Button variant="outline" href={tier.href}>
+                  Get started
+                </Button>
+              </td>
+            ))}
+          </tr>
+        </thead>
+        {[...new Set(tiers[0].features.map(({ section }) => section))].map(
+          (section) => (
+            <tbody key={section} className={pricingStyles.group}>
+              <tr>
+                <th
+                  scope="colgroup"
+                  colSpan={4}
+                  className={`${pricingStyles.px0} ${pricingStyles.pt10} ${pricingStyles.pb0} ${pricingStyles.groupFirstPt5}`}
+                >
+                  <div className={pricingStyles.sectionHeader}>
+                    {section}
+                  </div>
+                </th>
+              </tr>
+              {tiers[0].features
+                .filter((feature) => feature.section === section)
+                .map(({ name }) => (
+                  <tr
+                    key={name}
+                    className={pricingStyles.tableRow}
+                  >
+                    <th
+                      scope="row"
+                      className={pricingStyles.featureName}
+                    >
+                      {name}
+                    </th>
+                    {tiers.map((tier) => {
+                      let value = tier.features.find(
+                        (feature) =>
+                          feature.section === section && feature.name === name,
+                      )?.value;
+
+                      return (
+                        <td
+                          key={tier.slug}
+                          className={pricingStyles.p4}
+                        >
+                          {value === true ? (
+                            <>
+                              <CheckIcon className={pricingStyles.checkIcon} />
+                              <span className={pricingStyles.srOnly}>
+                                Included in {tier.name}
+                              </span>
+                            </>
+                          ) : value === false || value === undefined ? (
+                            <>
+                              <MinusIcon className={pricingStyles.minusIcon} />
+                              <span className={pricingStyles.srOnly}>
+                                Not included in {tier.name}
+                              </span>
+                            </>
+                          ) : (
+                            <div className={pricingStyles.featureValue}>{value}</div>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+            </tbody>
+          ),
+        )}
+      </table>
+    </Container>
   );
 }
 
@@ -277,6 +445,7 @@ export default function Pricing() {
       </Container>
       <Header />
       <PricingCards />
+      <PricingTable />
       <Testimonial />
       <FrequentlyAskedQuestions />
       <Footer />

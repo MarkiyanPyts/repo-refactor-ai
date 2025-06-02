@@ -336,3 +336,117 @@
   line-height: 1.5;
   color: var(--color-gray-600);
 }
+
+/* Pricing Table */
+.tableMarginTop {
+  margin-top: 4rem;
+}
+
+.table {
+  width: 100%;
+  text-align: left;
+}
+
+.colTwoFifths {
+  width: 40%;
+}
+
+@media (min-width: 640px) {
+  .colTwoFifths {
+    width: 40%;
+  }
+}
+
+.colOneFifth {
+  width: 20%;
+}
+
+.maxSmHidden {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .maxSmHidden {
+    display: table-row;
+  }
+}
+
+.p0 {
+  padding: 0;
+}
+
+.px0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.pt4 {
+  padding-top: 1rem;
+}
+
+.pb0 {
+  padding-bottom: 0;
+}
+
+.pt10 {
+  padding-top: 2.5rem;
+}
+
+.p4 {
+  padding: 1rem;
+}
+
+.group {
+  /* Group styles */
+}
+
+.groupFirstPt5 {
+  padding-top: 2.5rem;
+}
+
+.group:first-of-type .groupFirstPt5 {
+  padding-top: 1.25rem;
+}
+
+.sectionHeader {
+  margin: 0 -1rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-gray-50);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.featureName {
+  padding: 0 0 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-gray-600);
+}
+
+.checkIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #16a34a; /* green-600 */
+}
+
+.minusIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-gray-400);
+}
+
+.featureValue {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
