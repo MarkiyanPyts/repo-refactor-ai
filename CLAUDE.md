@@ -30,7 +30,6 @@ npm run typegen      # Generate TypeScript types from Sanity schema
 
 ### Directory Structure
 - `/src/app/` - Next.js App Router pages and layouts
-  - `blog/` - Blog listing and individual post pages
   - `studio/` - Embedded Sanity Studio
   - `company/`, `pricing/`, `login/` - Static marketing pages
 - `/src/components/` - React components (all client-side)
