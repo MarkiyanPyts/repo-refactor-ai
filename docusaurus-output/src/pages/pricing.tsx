@@ -57,7 +57,7 @@ const tiers = [
 
 function Header() {
   return (
-    <Container className={styles.mt16}>
+    <Container className={`${styles.mt16} ${pricingStyles.pb16}`}>
       <Heading as="h1">Pricing that grows with your team size.</Heading>
       <Lead className={`${styles.mt6} ${styles.maxW3xl}`}>
         Companies all over the world have closed millions of deals with Radiant.
@@ -69,7 +69,7 @@ function Header() {
 
 function PricingCards() {
   return (
-    <div className={`${styles.relative} ${styles.py24}`}>
+    <div className={`${styles.relative} ${pricingStyles.pricingSection}`}>
       <Gradient className={`${styles.absolute} ${pricingStyles.insetX2} ${pricingStyles.top48} ${styles.bottom0} ${styles.rounded4xl} ${styles.ring1} ${styles.ringBlackOpacity5} ${styles.ringInset}`} />
       <Container className={styles.relative}>
         <div className={`${styles.grid} ${styles.gridCols1} ${styles.gap8} ${pricingStyles.lgGridCols3}`}>

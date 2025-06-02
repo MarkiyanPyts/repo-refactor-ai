@@ -19,6 +19,16 @@
   top: 12rem;
 }
 
+/* Spacing */
+.pb16 {
+  padding-bottom: 4rem;
+}
+
+.pricingSection {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
 /* Margins */
 .mt24 {
   margin-top: 6rem;
