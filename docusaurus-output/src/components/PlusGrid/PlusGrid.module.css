@@ -1,0 +1,119 @@
+.plusGrid {
+  position: relative;
+}
+
+.plusGridRow {
+  position: relative;
+  isolation: isolate;
+  padding-top: calc(var(--spacing-2) + 1px);
+}
+
+.plusGridRow:last-child {
+  padding-bottom: calc(var(--spacing-2) + 1px);
+}
+
+/* Row borders */
+.rowBorders {
+  position: absolute;
+  inset: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: -10;
+}
+
+.borderTop1,
+.borderTop2,
+.borderBottom1,
+.borderBottom2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+.borderTop1 {
+  top: 0;
+  border-top-width: 1px;
+}
+
+.borderTop2 {
+  top: var(--spacing-2);
+  border-top-width: 1px;
+}
+
+.borderBottom1,
+.borderBottom2 {
+  display: none;
+}
+
+.plusGridRow:last-child .borderBottom1,
+.plusGridRow:last-child .borderBottom2 {
+  display: block;
+}
+
+.borderBottom1 {
+  bottom: 0;
+  border-bottom-width: 1px;
+}
+
+.borderBottom2 {
+  bottom: var(--spacing-2);
+  border-bottom-width: 1px;
+}
+
+/* Grid items */
+.plusGridItem {
+  position: relative;
+}
+
+/* Plus icons */
+.plusIcon {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  fill: rgba(0, 0, 0, 0.1);
+}
+
+.icon-top {
+  top: calc(-1 * var(--spacing-2));
+}
+
+.icon-bottom {
+  bottom: calc(-1 * var(--spacing-2));
+}
+
+.icon-left {
+  left: calc(-1 * var(--spacing-2));
+}
+
+.icon-right {
+  right: calc(-1 * var(--spacing-2));
+}
+
+/* Icon visibility rules */
+.iconTopLeft,
+.iconBottomLeft {
+  display: none;
+}
+
+.plusGridItem:first-child .iconTopLeft {
+  display: block;
+}
+
+.plusGridRow:last-child .plusGridItem:first-child .iconBottomLeft {
+  display: block;
+}
+
+.iconTopRight {
+  display: block;
+}
+
+.iconBottomRight {
+  display: none;
+}
+
+.plusGridRow:last-child .iconBottomRight {
+  display: block;
+}

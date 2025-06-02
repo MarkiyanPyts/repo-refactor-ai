@@ -1,0 +1,185 @@
+/* Page Layout */
+.minHeight {
+  min-height: 100vh;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 0;
+}
+
+.sectionGray {
+  background-color: var(--color-gray-50);
+}
+
+.heroSection {
+  position: relative;
+  padding: 5rem 0;
+}
+
+/* Text Alignment and Flex */
+.textCenter {
+  text-align: center;
+}
+
+.flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spacing */
+.mt4 {
+  margin-top: 1rem;
+}
+
+.mt6 {
+  margin-top: 1.5rem;
+}
+
+.mt8 {
+  margin-top: 2rem;
+}
+
+.mt10 {
+  margin-top: 2.5rem;
+}
+
+.mt12 {
+  margin-top: 3rem;
+}
+
+.mb12 {
+  margin-bottom: 3rem;
+}
+
+.gap4 {
+  gap: 1rem;
+}
+
+.gap8 {
+  gap: 2rem;
+}
+
+.gap12 {
+  gap: 3rem;
+}
+
+/* Layout */
+.flex {
+  display: flex;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.gridCols1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .mdGridCols2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .mdGridCols3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Typography */
+.text4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.fontBold {
+  font-weight: 700;
+}
+
+.textGray900 {
+  color: var(--color-gray-900);
+}
+
+.textGray600 {
+  color: var(--color-gray-600);
+}
+
+/* Containers */
+.maxW3xl {
+  max-width: 48rem;
+}
+
+.maxW2xl {
+  max-width: 42rem;
+}
+
+.maxWXl {
+  max-width: 36rem;
+}
+
+.mxAuto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Interactive Elements */
+.h96 {
+  height: 24rem;
+}
+
+.bgGray900 {
+  background-color: var(--color-gray-900);
+}
+
+.bgWhite {
+  background-color: var(--color-white);
+}
+
+.roundedLg {
+  border-radius: var(--radius-lg);
+}
+
+.shadowLg {
+  box-shadow: var(--shadow-lg);
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+/* Gradients for demo */
+.gradientBlue {
+  background: linear-gradient(to bottom right, #60a5fa, #9333ea);
+}
+
+.gradientGreen {
+  background: linear-gradient(to bottom right, #4ade80, #14b8a6);
+}
+
+.gradientPink {
+  background: linear-gradient(to bottom right, #f472b6, #ef4444);
+}
+
+.hFull {
+  height: 100%;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

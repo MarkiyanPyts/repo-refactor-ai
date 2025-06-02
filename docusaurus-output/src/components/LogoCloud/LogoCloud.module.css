@@ -1,0 +1,37 @@
+.logoCloud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .logoCloud {
+    margin: 0 auto;
+    max-width: 28rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: var(--spacing-4);
+  }
+}
+
+.logo {
+  height: 2.25rem; /* h-9 */
+}
+
+@media (max-width: 640px) {
+  .logo {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 640px) {
+  .logo {
+    height: 2rem; /* h-8 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    height: 3rem; /* h-12 */
+  }
+}

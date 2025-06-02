@@ -1,0 +1,1 @@
+export { LogoCluster } from './LogoCluster';

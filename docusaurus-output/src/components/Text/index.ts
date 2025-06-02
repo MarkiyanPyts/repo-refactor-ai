@@ -1,0 +1,1 @@
+export { Heading, Subheading, Lead } from './Text';
