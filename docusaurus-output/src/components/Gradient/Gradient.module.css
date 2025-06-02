@@ -22,8 +22,9 @@
   height: 15rem; /* h-60 */
   width: 36rem; /* w-xl (576px) */
   background: linear-gradient(115deg, #fff1be 28%, #ee87cb 70%, #b060ff 100%);
-  transform: rotate(-10deg);
-  border-radius: var(--radius-full);
+  transform: rotate(-10deg) translateZ(0);
+  transform-gpu: true;
+  border-radius: 9999px;
   filter: blur(48px);
 }
 

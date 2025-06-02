@@ -14,29 +14,31 @@ import { LogoCloud } from '../components/LogoCloud';
 import { LogoCluster } from '../components/LogoCluster';
 import { LogoTimeline } from '../components/LogoTimeline';
 import { Map } from '../components/Map';
+// Note: Screenshot and Testimonials components need to be created
 
-// Component showcase sections
 function HeroSection() {
   return (
-    <section className={styles.heroSection}>
-      <GradientBackground />
-      <Container>
-        <div className={`${styles.flexCenter} ${styles.textCenter}`}>
-          <Subheading>Welcome to Radiant</Subheading>
-          <Heading className={styles.mt6}>
-            Close every deal with confidence
-          </Heading>
-          <Lead className={`${styles.mt6} ${styles.maxW3xl}`}>
-            Transform your sales process with our powerful platform that helps you
-            track, analyze, and close deals faster than ever before.
-          </Lead>
-          <div className={`${styles.mt10} ${styles.flexRow} ${styles.gap4}`}>
-            <Button href="#features">Get Started</Button>
-            <Button variant="outline" href="#demo">Watch Demo</Button>
+    <div className={styles.relative}>
+      <Gradient className={`${styles.absolute} ${styles.inset2} ${styles.bottom0} ${styles.rounded4xl} ${styles.ring1} ${styles.ringBlackOpacity5} ${styles.ringInset}`} />
+      <Container className={styles.relative}>
+        <Navbar />
+        <div className={`${styles.pt16} ${styles.pb24} ${styles.smPt24} ${styles.smPb32} ${styles.mdPt32} ${styles.mdPb48}`}>
+          <h1 className={styles.heroTitle}>
+            Close every deal.
+          </h1>
+          <p className={`${styles.mt8} ${styles.maxWLg} ${styles.heroSubtitle}`}>
+            Radiant helps you sell more by revealing sensitive information about
+            your customers.
+          </p>
+          <div className={`${styles.mt12} ${styles.flex} ${styles.flexCol} ${styles.gapX6} ${styles.gapY4} ${styles.smFlexRow}`}>
+            <Button href="#">Get started</Button>
+            <Button variant="secondary" href="/pricing">
+              See pricing
+            </Button>
           </div>
         </div>
       </Container>
-    </section>
+    </div>
   );
 }
 
@@ -72,59 +74,137 @@ function StatsSection() {
   );
 }
 
-function FeaturesSection() {
+function FeatureSection() {
   return (
-    <section id="features" className={styles.section}>
-      <Container>
-        <div className={`${styles.flexCenter} ${styles.textCenter} ${styles.mb12}`}>
-          <Subheading>Features</Subheading>
-          <Heading as="h2" className={styles.mt4}>
-            Everything you need to succeed
-          </Heading>
-        </div>
-        <div className={`${styles.grid} ${styles.gridCols1} ${styles.mdGridCols2} ${styles.gap8}`}>
-          <BentoCard
-            eyebrow="Analytics"
-            title="Real-time insights"
-            description="Get instant visibility into your sales pipeline with powerful analytics and reporting tools."
-            graphic={
-              <div className={`${styles.hFull} ${styles.gradientBlue}`} />
-            }
-            fade={['bottom']}
-          />
-          <BentoCard
-            eyebrow="Automation"
-            title="Streamline workflows"
-            description="Automate repetitive tasks and focus on what matters most - building relationships."
-            graphic={
-              <div className={`${styles.hFull} ${styles.gradientGreen}`} />
-            }
-            fade={['bottom']}
-          />
-          <BentoCard
-            dark
-            eyebrow="Integration"
-            title="Connect everything"
-            description="Seamlessly integrate with your favorite tools and keep all your data in sync."
-            graphic={
-              <div className={`${styles.hFull} ${styles.flexCenter}`}>
-                <LinkedAvatars />
-              </div>
-            }
-            fade={['top', 'bottom']}
-          />
-          <BentoCard
-            eyebrow="Collaboration"
-            title="Work together"
-            description="Share insights, collaborate on deals, and keep your entire team aligned."
-            graphic={
-              <div className={`${styles.hFull} ${styles.gradientPink}`} />
-            }
-            fade={['bottom']}
+    <div className={styles.overflowHidden}>
+      <Container className={styles.pb24}>
+        <Heading as="h2" className={styles.maxW3xl}>
+          A snapshot of your entire sales pipeline.
+        </Heading>
+        <div className={`${styles.mt16} ${styles.screenshotContainer}`}>
+          <img 
+            width={1216}
+            height={768}
+            src="/screenshots/app.png" 
+            alt="Application screenshot"
+            className={styles.screenshot}
           />
         </div>
       </Container>
-    </section>
+    </div>
+  );
+}
+
+function BentoSection() {
+  return (
+    <Container>
+      <Subheading>Sales</Subheading>
+      <Heading as="h3" className={`${styles.mt2} ${styles.maxW3xl}`}>
+        Know more about your customers than they do.
+      </Heading>
+
+      <div className={`${styles.mt10} ${styles.grid} ${styles.gridCols1} ${styles.gap4} ${styles.smMt16} ${styles.lgGridCols6} ${styles.lgGridRows2}`}>
+        <BentoCard
+          eyebrow="Insight"
+          title="Get perfect clarity"
+          description="Radiant uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more."
+          graphic={
+            <div className={styles.profileScreenshot} />
+          }
+          fade={['bottom']}
+          className={`${styles.maxLgRoundedT4xl} ${styles.lgColSpan3} ${styles.lgRoundedTl4xl}`}
+        />
+        <BentoCard
+          eyebrow="Analysis"
+          title="Undercut your competitors"
+          description="With our advanced data mining, you'll know which companies your leads are talking to and exactly how much they're being charged."
+          graphic={
+            <div className={styles.competitorsScreenshot} />
+          }
+          fade={['bottom']}
+          className={`${styles.lgColSpan3} ${styles.lgRoundedTr4xl}`}
+        />
+        <BentoCard
+          eyebrow="Speed"
+          title="Built for power users"
+          description="It's never been faster to cold email your entire contact list using our streamlined keyboard shortcuts."
+          graphic={
+            <div className={`${styles.flexSizeFull} ${styles.pt10} ${styles.pl10}`}>
+              <div className={styles.keyboardPlaceholder}>⌘⇧D</div>
+            </div>
+          }
+          className={`${styles.lgColSpan2} ${styles.lgRoundedBl4xl}`}
+        />
+        <BentoCard
+          eyebrow="Source"
+          title="Get the furthest reach"
+          description="Bypass those inconvenient privacy laws to source leads from the most unexpected places."
+          graphic={<LogoCluster />}
+          className={styles.lgColSpan2}
+        />
+        <BentoCard
+          eyebrow="Limitless"
+          title="Sell globally"
+          description="Radiant helps you sell in locations currently under international embargo."
+          graphic={<Map />}
+          className={`${styles.maxLgRoundedB4xl} ${styles.lgColSpan2} ${styles.lgRoundedBr4xl}`}
+        />
+      </div>
+    </Container>
+  );
+}
+
+function DarkBentoSection() {
+  return (
+    <div className={`${styles.mx2} ${styles.mt2} ${styles.rounded4xl} ${styles.bgGray900} ${styles.py32}`}>
+      <Container>
+        <Subheading dark>Outreach</Subheading>
+        <Heading as="h3" dark className={`${styles.mt2} ${styles.maxW3xl}`}>
+          Customer outreach has never been easier.
+        </Heading>
+
+        <div className={`${styles.mt10} ${styles.grid} ${styles.gridCols1} ${styles.gap4} ${styles.smMt16} ${styles.lgGridCols6} ${styles.lgGridRows2}`}>
+          <BentoCard
+            dark
+            eyebrow="Networking"
+            title="Sell at the speed of light"
+            description="Our RadiantAI chat assistants analyze the sentiment of your conversations in real time, ensuring you're always one step ahead."
+            graphic={
+              <div className={styles.networkingScreenshot} />
+            }
+            fade={['top']}
+            className={`${styles.maxLgRoundedT4xl} ${styles.lgColSpan4} ${styles.lgRoundedTl4xl}`}
+          />
+          <BentoCard
+            dark
+            eyebrow="Integrations"
+            title="Meet leads where they are"
+            description="With thousands of integrations, no one will be able to escape your cold outreach."
+            graphic={<LogoTimeline />}
+            className={`${styles.zIndex10} ${styles.overflowVisible} ${styles.lgColSpan2} ${styles.lgRoundedTr4xl}`}
+          />
+          <BentoCard
+            dark
+            eyebrow="Meetings"
+            title="Smart call scheduling"
+            description="Automatically insert intro calls into your leads' calendars without their consent."
+            graphic={<LinkedAvatars />}
+            className={`${styles.lgColSpan2} ${styles.lgRoundedBl4xl}`}
+          />
+          <BentoCard
+            dark
+            eyebrow="Engagement"
+            title="Become a thought leader"
+            description="RadiantAI automatically writes LinkedIn posts that relate current events to B2B sales, helping you build a reputation as a thought leader."
+            graphic={
+              <div className={styles.engagementScreenshot} />
+            }
+            fade={['top']}
+            className={`${styles.maxLgRoundedB4xl} ${styles.lgColSpan4} ${styles.lgRoundedBr4xl}`}
+          />
+        </div>
+      </Container>
+    </div>
   );
 }
 
@@ -198,15 +278,17 @@ function MapSection() {
 
 export default function Home() {
   return (
-    <div className={styles.minHeight}>
-      <Navbar />
+    <div className={styles.overflowHidden}>
+      <HeroSection />
       <main>
-        <HeroSection />
-        <StatsSection />
-        <FeaturesSection />
-        <LogosSection />
-        <InteractiveSection />
-        <MapSection />
+        <Container className={styles.mt10}>
+          <LogoCloud />
+        </Container>
+        <div className={`${styles.bgLinearToB} ${styles.fromWhite} ${styles.fromFiftyPercent} ${styles.toGray100} ${styles.py32}`}>
+          <FeatureSection />
+          <BentoSection />
+        </div>
+        <DarkBentoSection />
       </main>
       <Footer />
     </div>
